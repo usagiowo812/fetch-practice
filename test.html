@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function test() {
+            let p = new Promise(function (resolve, reject) {
+                let src = document.getElementById('inputUrl').value;
+                resolve(src);
+            });
+
+            p.then(function (result) {
+                // console.log(result);
+                fetch(result).then(function (response) {
+                    return response.json();
+                }).then(function (result) {
+                    console.log(result);
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id='inputUrl'>
+    <!-- https://cwpeng.github.io/live-records-samples/data/products.json 
+        https://usagiowo812.github.io/test-fetch/data/products.json    測試網址 -->
+
+    <input type="button" value="send" onclick='test()'>
+</body>
+
+</html>

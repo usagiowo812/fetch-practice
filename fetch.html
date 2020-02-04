@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function usagiMaker(inputName, inputSize, inputUrl) {
+        //     let name = document.getElementById('inputName').value;
+        //     let size = document.getElementById('inputSize').value;
+        //     let url = document.getElementById('inputUrl').value;
+        //     alert(url);
+        //     return url;
+        // };
+        // let src
+        // let src = "https://usagiowo812.github.io/test-fetch/data/input.html";
+
+        function url(src) {
+            let u = new Promise(function (resolve, reject) {
+                let src = document.getElementById('inputUrl');
+                resolve(src);
+            });
+            return u;
+        };
+        // let src = document.getElementById('inputUrl');
+        let promise = url(src)
+        fetch(promise).then(function (response) {
+            return response;
+        }).then(function (result) {
+            console.log(result);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <input type="text" id="inputName">
+    <input type="text" id="inputSize"> -->
+    <input type="text" id='inputUrl'>
+
+    <input type="button" value="send" onclick='fetch()'>
+</body>
+
+</html>
